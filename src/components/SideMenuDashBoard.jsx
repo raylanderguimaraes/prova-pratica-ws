@@ -1,7 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { MdOutlineContentCut, MdOutlineAccountCircle } from "react-icons/md";
+import { MdManageAccounts, MdOutlineLogout} from "react-icons/md";
 
 export default function SideMenuDashBoard() {
   return (
@@ -20,17 +20,17 @@ export default function SideMenuDashBoard() {
             </h1>
 
             <div className="mb-4 border-b border-gray-100 pb-4 ">
-              <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-zinc-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
-                <MdOutlineContentCut className="text-2xl text-zinc-800 group-hover:text-zinc-100" />
+              <div className="flex mb-2 justify-start items-center gap-4 px-3 hover:bg-zinc-800 py-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+                <MdManageAccounts className="text-2xl text-zinc-800 group-hover:text-zinc-100" />
                 <h3 className="text-base text-zinc-800 group-hover:text-zinc-100 font-semibold  ">
-                  Beauty & Hair
+                  Company Profile
                 </h3>
               </div>
 
               <div className="py-4 mt-20">
-                <Link href="/dashboard">
+                <Link href="/">
                   <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-zinc-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
-                    <MdOutlineAccountCircle className="text-2xl text-zinc-800 group-hover:text-zinc-100" />
+                    <MdOutlineLogout className="text-2xl text-zinc-800 group-hover:text-zinc-100" />
                     <h3 className="text-base text-zinc-800 group-hover:text-zinc-100 font-semibold  ">
                       Logout
                     </h3>

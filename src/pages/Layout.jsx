@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export default function Layout({ children }) {
   return (
-    <div className="h-screen">
+    <div className="h-full">
       <Head>
         <title>My Products</title>
       </Head>
