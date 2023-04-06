@@ -4,12 +4,13 @@ import Footer from "../components/Footer";
 
 export default function Layout({ children }) {
   return (
-    <div className=" h-screen">
-      <Head
-        title={"My Products"}
-      />
+    <div className="h-screen">
+      <Head>
+        <title>My Products</title>
+      </Head>
+
       <Header />
-      <main className=" lg:pb-[800px] pb-[2000px] ">{children}</main>
+      <main className="  ">{children}</main>
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
-"use client";
 import { Disclosure } from "@headlessui/react";
+import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {
   MdOutlineHealthAndSafety,
@@ -9,6 +9,7 @@ import {
   MdOutlineYard,
   MdOutlineGrass,
   MdOutlineContentCut,
+  MdOutlineAccountCircle
 } from "react-icons/md";
 
 export default function SideMenu() {
@@ -76,10 +77,22 @@ export default function SideMenu() {
                   Beauty & Hair
                 </h3>
               </div>
+
+              <div className="py-4 mt-20">
+              <Link href="/dashboard">
+                <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-zinc-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+                  <MdOutlineAccountCircle className="text-2xl text-zinc-800 group-hover:text-zinc-100" />
+                  <h3 className="text-base text-zinc-800 group-hover:text-zinc-100 font-semibold  ">
+                    Login
+                  </h3>
+                </div>
+              </Link>
+              </div>
             </div>
           </div>
         </div>
       </Disclosure>
+
     </div>
   );
 }
