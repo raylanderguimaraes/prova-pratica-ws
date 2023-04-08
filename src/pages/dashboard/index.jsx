@@ -1,8 +1,6 @@
 import SideMenuDashBoard from "@/components/SideMenuDashBoard";
 import Layout from "../Layout";
-import { getCookie } from "cookies-next";
 import { MdOutlineClose, MdAdd } from "react-icons/md";
-import Link from "next/link";
 
 export default function dashboard() {
   return (
