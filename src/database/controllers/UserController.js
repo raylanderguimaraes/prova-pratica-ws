@@ -14,10 +14,10 @@ const login = async (email, password) => {
   if (!database.connect()) return false;
   const user = {
     email: email,
-    password: password
-  }
+    password: password,
+  };
   const response = await database.collection("users").findOne(user);
-  console.log(response)
+  console.log(response);
 };
 
 const userController = {

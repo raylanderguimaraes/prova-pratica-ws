@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { MdManageAccounts, MdOutlineLogout} from "react-icons/md";
+import { MdManageAccounts, MdOutlineLogout } from "react-icons/md";
 
 export default function SideMenuDashBoard() {
   return (

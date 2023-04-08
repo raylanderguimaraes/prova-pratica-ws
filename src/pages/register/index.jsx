@@ -13,7 +13,7 @@ export default function Register() {
     password: "",
   });
 
-  const router = useRouter()
+  const router = useRouter();
 
   const handleFormEdit = (event, name) => {
     setFormData({
@@ -22,32 +22,31 @@ export default function Register() {
     });
   };
 
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
 
-  const handleForm = async (event)=> {
-    
+  const handleForm = async (event) => {
     try {
-        event.preventDefault()
-        const response = await fetch(`/api/user/register`, {
-            method: 'POST',
-            body: JSON.stringify(formData)
-        })
-        const json = await response.json()
-        if(response.status !== 201) throw new Error(json)
-        setCookie('authorization', json)
-        router.push('/dashboard')
-        
+      event.preventDefault();
+      const response = await fetch(`/api/user/register`, {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
+      const json = await response.json();
+      if (response.status !== 201) throw new Error(json);
+      setCookie("authorization", json);
+      router.push("/dashboard");
     } catch (error) {
-        setError(error.message)
+      setError(error.message);
     }
-  }
-
+  };
 
   return (
     <Layout>
       <div className="h-screen flex flex-col items-center justify-center">
         <LoginCard title="Cadastrar">
-          <form onSubmit={handleForm} className="flex flex-col gap-2 bg-red-100 rounded-md mb-10">
+          <form
+            onSubmit={handleForm}
+            className="flex flex-col gap-2 bg-red-100 rounded-md mb-10">
             <InputForm
               type="text"
               placeholder="Seu Nome"
@@ -78,7 +77,11 @@ export default function Register() {
             <button className="bg-zinc-900 mt-2 text-zinc-100 py-2 rounded-md hover:bg-zinc-800">
               Cadastrar
             </button>
-            {error && <p className="text-red-700 text-xl font-semibold text-center">Erro: {error}</p>}
+            {error && (
+              <p className="text-red-700 text-xl font-semibold text-center">
+                Erro: {error}
+              </p>
+            )}
           </form>
         </LoginCard>
 
