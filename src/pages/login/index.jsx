@@ -38,6 +38,15 @@ export default function Login() {
     }
   };
 
+
+  // funcao para determinar variavel que mostra senha ou nao
+    const [isShown, setIsShown] = useState(false);
+
+  // funcao que é chamada quando o checkbox e marcada ou desmarcada
+    const togglePassword = () =>{
+      setIsShown((isShown)=> !isShown);
+    }
+
   return (
     <Layout>
       <div className="h-screen flex flex-col items-center justify-center">
@@ -55,14 +64,26 @@ export default function Login() {
               }}
             />
             <InputForm
-              type="text"
+              type={isShown? "text" : "password"}
               placeholder="Senha"
               required
+             
               value={formData.password}
               onChange={(e) => {
                 handleFormEdit(e, "password");
               }}
             />
+
+            <div className="checkbox-container flex gap-3">
+              <label htmlFor="checkbox">Mostrar senha?</label>
+              <input
+                id="checkbox"
+                type="checkbox"
+                checked={isShown}
+                onChange={togglePassword}
+              />
+            </div>
+
             <button className="bg-zinc-900 mt-2 text-zinc-100 py-2 rounded-md hover:bg-zinc-800">
               Entrar
             </button>

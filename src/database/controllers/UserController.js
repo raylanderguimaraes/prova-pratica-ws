@@ -20,9 +20,11 @@ const login = async (email, password) => {
   console.log(response);
 };
 
+
 const userController = {
   saveUser,
   login,
+ 
 };
 
 export default userController;
